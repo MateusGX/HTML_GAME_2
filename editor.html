@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/editor.css">
+        <title>Map Editor</title>
+    </head>
+    <body>
+        <div style="display: flex; align-items: flex-start;">
+            <div id="game"></div>
+            <select name="" id="tile">
+                <option value="caminho">Caminho</option>
+                <option value="parede">Parede</option>
+                <option value="player">Jogador</option>
+                <option value="caixa">Caixa</option>
+            </select>
+        </div>
+        <div id="info" style="display: flex; flex-direction: column;">
+            <button onclick="showMapa()">CÓDIGO DO MAPA</button>
+            <textarea name="" id="code" cols="1" rows="1"></textarea>
+            <a href="index.html"><button>Voltar</button></a>
+        </div>
+        <script>
+            var w = Number(prompt("Largura:"))
+            var h = Number(prompt("Altura:"))
+            var gMapa = new Array(h)
+            var gMapaElementos = new Array(h)
+            function init(){
+                for (var i = 0; i < gMapa.length; i++) {
+                    gMapa[i] = new Array(w);
+                    gMapaElementos[i] = new Array(w)
+                }
+                document.getElementById('game').style.height = `${h * 30}px`
+                document.getElementById('game').style.width = `${w * 30}px`
+                for (var i = 0; i < h; i++) {
+                    for (var j = 0; j < w; j++) {
+                        var elemento = document.createElement('button')
+                        elemento.className = 'caminho'
+                        elemento.setAttribute('onclick',`mudarTipo(${i},${j})`)
+                        document.getElementById('game').appendChild(elemento)
+                        gMapaElementos[i][j] = elemento
+                        gMapa[i][j] = 0
+                    }
+                }
+            }
+            function mudarTipo(i, j){
+                if(tile.value == 'parede'){
+                    gMapaElementos[i][j].removeAttribute('id')
+                    gMapaElementos[i][j].className = 'parede'
+                    gMapa[i][j] = 1
+                }else if(tile.value == 'caixa'){
+                    gMapaElementos[i][j].removeAttribute('id')
+                    gMapaElementos[i][j].className = 'caixa'
+                    gMapa[i][j] = 3
+                }else if(tile.value == 'player'){
+                    gMapaElementos[i][j].removeAttribute('class')
+                    gMapaElementos[i][j].id = 'player'
+                    gMapa[i][j] = 2
+                }else if(tile.value == 'caminho'){
+                    gMapaElementos[i][j].removeAttribute('id')
+                    gMapaElementos[i][j].className = 'caminho'
+                    gMapa[i][j] = 0
+                }
+            }
+            function showMapa(){
+                document.getElementById('code').innerHTML = JSON.stringify(gMapa)
+                document.getElementById('code').select()
+                document.execCommand('copy')
+            }
+            init()
+        </script>
+    </body>
+</html>

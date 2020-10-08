@@ -1,0 +1,139 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+#game{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#matriz{
+    font-family: 'Roboto', sans-serif;
+    font-size: 37px;
+}
+.parede{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: none;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.4);
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+.caminho{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.4);
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+.caixa{
+    width: 30px;
+    height: 30px;
+    background-color: brown;
+    border: none;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.4);
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+.vazio{
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+    border: none;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.4);
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+#player{
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border: none;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.4);
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* INFO */
+#info{
+    font-family: 'Roboto', sans-serif;
+    text-justify: auto;
+    right: 20px;
+    top: 20px;
+    position: absolute;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    padding: 2px;
+    background-color: whitesmoke;
+}
+#c{
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    border: 1px solid black;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+#p{
+    font-family: 'Roboto', sans-serif;
+    background-color: red;
+    border: 1px solid black;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+#j{
+    font-family: 'Roboto', sans-serif;
+    background-color: blue;
+    border: 1px solid black;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+#cx{
+    font-family: 'Roboto', sans-serif;
+    background-color: brown;
+    border: 1px solid black;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+}
